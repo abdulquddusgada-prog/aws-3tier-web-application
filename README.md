@@ -1,161 +1,140 @@
-# ☁️ AWS 3-Tier Web Application
-
-A production-style **AWS 3-Tier Web Application** designed and deployed using AWS cloud services and DevOps best practices.
-
----
+# AWS 3-Tier Web Application
 
 ## 📌 Project Overview
 
-This project demonstrates how to build a secure and scalable 3-tier architecture on AWS.
-
-The application is deployed on Amazon EC2 using Nginx and is designed with custom networking components including public/private subnets, route tables, Internet Gateway, NAT Gateway, and Security Groups.
+This project demonstrates the deployment of a simple AWS 3-Tier Web Application using AWS networking and compute services. The goal is to build a secure and scalable architecture following cloud best practices.
 
 ---
 
-# 🏗️ Architecture
+## 🏗️ Architecture
 
-```
-                 Internet
-                     │
-             Internet Gateway
-                     │
-             Public Route Table
-                     │
-         ┌────────────────────┐
-         │                    │
-         │   Public Subnet    │
-         │                    │
-         │    EC2 + Nginx     │
-         └────────────────────┘
-                     │
-              NAT Gateway
-                     │
-         ┌────────────────────┐
-         │                    │
-         │   Private Subnet   │
-         │                    │
-         │ Backend / Database │
-         └────────────────────┘
-```
+Client
+↓
+Internet Gateway
+↓
+Public Subnet
+↓
+Nginx Web Server (EC2)
+↓
+Tomcat Application Server
+↓
+Database (RDS - Upcoming)
 
 ---
 
-# 🚀 AWS Services Used
+## ☁️ AWS Services Used
 
-| Service | Purpose |
-|----------|---------|
-| Amazon VPC | Custom Network |
-| Public Subnet | Web Tier |
-| Private Subnet | Application Tier |
-| Internet Gateway | Internet Access |
-| NAT Gateway | Outbound Internet |
-| Route Tables | Traffic Routing |
-| Security Groups | Firewall |
-| Amazon EC2 | Web Server |
-| Nginx | Web Server |
-| Amazon Linux 2023 | Operating System |
-
----
-
-# 💻 Technologies
-
-- AWS
-- Linux
-- Nginx
-- Git
-- GitHub
-
----
-
-# 📂 Project Structure
-
-```
-aws-3tier-web-application
-│
-├── architecture/
-├── frontend/
-│   └── index.html
-│
-├── screenshots/
-│
-├── README.md
-└── .gitignore
-```
-
----
-
-# 📸 Screenshots
-
-## AWS Infrastructure
-
-- VPC
+- Amazon VPC
 - Public & Private Subnets
 - Internet Gateway
-- NAT Gateway
-- Route Tables
-- Security Groups
-
-## EC2 Deployment
-
-- EC2 Instance
-- SSH Login
-- Nginx Running
-- Custom Homepage
-
----
-
-# ✅ Completed
-
-- Custom VPC
-- Public Subnet
-- Private Subnet
-- Internet Gateway
-- NAT Gateway
 - Route Tables
 - Security Groups
 - Amazon EC2
 - Amazon Linux 2023
-- Nginx Installation
-- Static Website Deployment
-- GitHub Repository
-
----
-
-# 🚧 Upcoming Features
-
-- Spring Boot Backend
-- Amazon RDS MySQL
-- Application Load Balancer
-- Auto Scaling Group
-- CloudWatch Monitoring
-- GitHub Actions CI/CD
-- IAM Roles
-- Route 53
-- SSL Certificate
-
----
-
-# 🎯 Skills Demonstrated
-
-- AWS Networking
-- Linux Administration
-- EC2 Management
-- Nginx Configuration
+- Apache Tomcat 10
+- Nginx
 - Git & GitHub
-- Cloud Security
-- Infrastructure Deployment
 
 ---
 
-# 👨‍💻 Author
+## 📂 Project Structure
+
+```text
+aws-3tier-web-application/
+│
+├── frontend/
+│   └── index.html
+│
+├── screenshots/
+│   └── phase5/
+│
+└── README.md
+```
+
+---
+
+# ✅ Phase 1
+
+- Created Custom VPC
+- Created Public and Private Subnets
+- Configured Internet Gateway
+- Configured Route Tables
+
+---
+
+# ✅ Phase 2
+
+- Created Security Groups
+- Configured Inbound and Outbound Rules
+
+---
+
+# ✅ Phase 3
+
+- Launched Amazon Linux EC2 Instance
+- Connected using SSH
+
+---
+
+# ✅ Phase 4
+
+- Installed Java 21 (Amazon Corretto)
+- Installed Apache Tomcat
+- Verified Tomcat on Port 8080
+
+---
+
+# ✅ Phase 5
+
+Successfully completed Web Server setup.
+
+### Completed Tasks
+
+- Installed Git
+- Cloned GitHub Repository
+- Installed and Configured Nginx
+- Deployed Frontend Application
+- Verified Application using Public IP
+- Captured deployment screenshots
+- Updated GitHub Repository
+
+---
+
+## 🌐 Application URL
+
+```
+http://35.154.97.40
+```
+
+> **Note:** This URL uses the EC2 public IP and may change if the instance is stopped and started without an Elastic IP.
+
+---
+
+## 📸 Screenshots
+
+Screenshots are available inside:
+
+```text
+screenshots/phase5/
+```
+
+---
+
+## 🚀 Upcoming Phases
+
+- Phase 6 – Application Load Balancer (ALB)
+- Phase 7 – Auto Scaling Group
+- Phase 8 – Amazon RDS Integration
+- Phase 9 – CI/CD using GitHub Actions
+- Phase 10 – Monitoring with CloudWatch
+
+---
+
+## 👨‍💻 Author
 
 **Abdul Quddus**
 
-AWS Cloud & DevOps Engineer (Fresher)
+AWS Cloud & DevOps Learner
 
 GitHub:
 https://github.com/abdulquddusgada-prog
-
----
-
-## ⭐ If you like this project, don't forget to star the repository.
