@@ -1,140 +1,182 @@
-# AWS 3-Tier Web Application
+AWS 3-Tier Web Application
 
-## 📌 Project Overview
+📌 Project Overview
 
-This project demonstrates the deployment of a simple AWS 3-Tier Web Application using AWS networking and compute services. The goal is to build a secure and scalable architecture following cloud best practices.
+This project demonstrates the deployment of a secure AWS 3-Tier WebApplication on AWS using Amazon VPC, EC2, Nginx, and Apache Tomcat. Itshowcases networking, Linux administration, deployment, troubleshooting,and GitHub version control.
 
----
+🏗️ Architecture
 
-## 🏗️ Architecture
 
-Client
-↓
+
+Flow
+
+Internet → Internet Gateway → Amazon VPC → Public Subnet → Amazon EC2(Amazon Linux) → Nginx → Apache Tomcat → Future: Amazon RDS (PrivateSubnet)
+
+☁️ AWS Services Used
+
+Amazon VPC
+
+Public & Private Subnets
+
 Internet Gateway
-↓
-Public Subnet
-↓
-Nginx Web Server (EC2)
-↓
-Tomcat Application Server
-↓
-Database (RDS - Upcoming)
 
----
+Route Tables
 
-## ☁️ AWS Services Used
+Security Groups
 
-- Amazon VPC
-- Public & Private Subnets
-- Internet Gateway
-- Route Tables
-- Security Groups
-- Amazon EC2
-- Amazon Linux 2023
-- Apache Tomcat 10
-- Nginx
-- Git & GitHub
+Amazon EC2
 
----
+Amazon Linux
 
-## 📂 Project Structure
+Nginx
 
-```text
+Apache Tomcat 10
+
+Git & GitHub
+
+📂 Project Structure
+
 aws-3tier-web-application/
-│
+├── architecture/
+│   └── architecture-diagram.png
 ├── frontend/
 │   └── index.html
-│
 ├── screenshots/
-│   └── phase5/
-│
+│   ├── 01-vpc.png
+│   ├── 02-subnets.png
+│   ├── 03-route-tables.png
+│   ├── 04-security-groups.png
+│   ├── 05-ec2-instance.png
+│   ├── 06-nginx-running.png
+│   ├── 07-website.png
+│   └── 08-ssh-terminal.png
 └── README.md
-```
 
----
+🚀 Deployment Steps
 
-# ✅ Phase 1
+Phase 1 -- Networking
 
-- Created Custom VPC
-- Created Public and Private Subnets
-- Configured Internet Gateway
-- Configured Route Tables
+Created a custom VPC
 
----
+Created Public & Private Subnets
 
-# ✅ Phase 2
+Configured Internet Gateway
 
-- Created Security Groups
-- Configured Inbound and Outbound Rules
+Configured Route Tables
 
----
+Phase 2 -- Security
 
-# ✅ Phase 3
+Created Security Groups
 
-- Launched Amazon Linux EC2 Instance
-- Connected using SSH
+Configured inbound/outbound rules
 
----
+Phase 3 -- EC2
 
-# ✅ Phase 4
+Launched Amazon Linux EC2
 
-- Installed Java 21 (Amazon Corretto)
-- Installed Apache Tomcat
-- Verified Tomcat on Port 8080
+Connected through SSH
 
----
+Phase 4 -- Application Setup
 
-# ✅ Phase 5
+Installed Java 21
 
-Successfully completed Web Server setup.
+Installed Apache Tomcat 10
 
-### Completed Tasks
+Verified Tomcat on port 8080
 
-- Installed Git
-- Cloned GitHub Repository
-- Installed and Configured Nginx
-- Deployed Frontend Application
-- Verified Application using Public IP
-- Captured deployment screenshots
-- Updated GitHub Repository
+Phase 5 -- Web Server
 
----
+Installed Git
 
-## 🌐 Application URL
+Cloned GitHub repository
 
-```
-http://35.154.97.40
-```
+Installed and configured Nginx
 
-> **Note:** This URL uses the EC2 public IP and may change if the instance is stopped and started without an Elastic IP.
+Deployed frontend
 
----
+Verified application using EC2 public IP
 
-## 📸 Screenshots
+📸 Screenshots
 
-Screenshots are available inside:
+Store screenshots inside the screenshots/ folder.
 
-```text
-screenshots/phase5/
-```
+🛠️ Challenges Faced
 
----
+SSH Authentication Issue
 
-## 🚀 Upcoming Phases
+Problem: Incorrect PEM path caused SSH login failure.
 
-- Phase 6 – Application Load Balancer (ALB)
-- Phase 7 – Auto Scaling Group
-- Phase 8 – Amazon RDS Integration
-- Phase 9 – CI/CD using GitHub Actions
-- Phase 10 – Monitoring with CloudWatch
+Solution: Located the correct key and connected using the proper SSHcommand.
 
----
+Nginx Port Conflict
 
-## 👨‍💻 Author
+Problem: Nginx failed with Address already in use.
 
-**Abdul Quddus**
+Reason: Apache (httpd) was already using port 80.
+
+Solution: Stopped and disabled Apache, then started Nginxsuccessfully.
+
+Security Group Verification
+
+Problem: Website was inaccessible.
+
+Solution: Verified inbound rules for SSH (22) and HTTP (80).
+
+Nginx Troubleshooting
+
+Used:
+
+sudo systemctl status nginx
+sudo journalctl -xeu nginx.service
+
+Resolved the port conflict and verified the service.
+
+🎯 Skills Demonstrated
+
+AWS VPC
+
+EC2
+
+Security Groups
+
+Route Tables
+
+Internet Gateway
+
+Linux
+
+Nginx
+
+Apache Tomcat
+
+SSH
+
+Git
+
+GitHub
+
+Troubleshooting
+
+🔮 Future Improvements
+
+Application Load Balancer
+
+Auto Scaling Group
+
+Amazon RDS
+
+Docker
+
+Terraform
+
+CI/CD Pipeline
+
+CloudWatch Monitoring
+
+👨‍💻 Author
+
+Abdul Quddus
 
 AWS Cloud & DevOps Learner
 
-GitHub:
-https://github.com/abdulquddusgada-prog
+GitHub: https://github.com/abdulquddusgada-prog
